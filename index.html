@@ -281,7 +281,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wangziqi20.github.io/2022/03/16/Java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3@interface/">
+    <link itemprop="mainEntityOfPage" href="https://wangziqi20.github.io/2022/03/16/Java%E6%B3%A8%E9%87%8A%EF%BC%88Annotation%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -295,7 +295,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/03/16/Java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3@interface/" class="post-title-link" itemprop="url">Java自定义注解@interface</a>
+            <a href="/2022/03/16/Java%E6%B3%A8%E9%87%8A%EF%BC%88Annotation%EF%BC%89/" class="post-title-link" itemprop="url">Java注释（Annotation）</a>
         </h2>
 
         <div class="post-meta">
@@ -306,7 +306,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-03-16 13:40:23 / 修改时间：14:20:07" itemprop="dateCreated datePublished" datetime="2022-03-16T13:40:23+08:00">2022-03-16</time>
+              <time title="创建时间：2022-03-16 13:40:23 / 修改时间：15:21:19" itemprop="dateCreated datePublished" datetime="2022-03-16T13:40:23+08:00">2022-03-16</time>
             </span>
 
           
@@ -320,7 +320,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Java自定义注解-interface"><a href="#Java自定义注解-interface" class="headerlink" title="Java自定义注解@interface"></a>Java自定义注解@interface</h1>
+          <h1 id="Java注释（Annotation）"><a href="#Java注释（Annotation）" class="headerlink" title="Java注释（Annotation）"></a>Java注释（Annotation）</h1><p>​        Annotation能被用来为程序元素（类、方法、成员变量等）设置元数据。值得指出的是，Annotation不影响程序代码的执行，无论增加、删除Annotation，代码都始终如一地执行。如果希望让程序中的Annotation在运行时起一定的作用，只有通过某种配套的工具对Annotation中的信息进行访问和处理，访问和处理Annotation的工具统称APT（Annotation Processing Tool）。</p>
+<h2 id="基本Annotation"><a href="#基本Annotation" class="headerlink" title="基本Annotation"></a>基本Annotation</h2><table>
+<thead>
+<tr>
+<th>注解名</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Override</td>
+<td>重写</td>
+</tr>
+<tr>
+<td>@Deprecated</td>
+<td>标示已过时</td>
+</tr>
+<tr>
+<td>@SuppressWarnings</td>
+<td>抑制编译器警告</td>
+</tr>
+<tr>
+<td>@SafeVarargs</td>
+<td>抑制堆污染警告</td>
+</tr>
+</tbody></table>
+<h2 id="自定义Annotation"><a href="#自定义Annotation" class="headerlink" title="自定义Annotation"></a>自定义Annotation</h2><p>基本结构</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> annotationTest&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以在任何地方使用这个注解了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@annotationTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，Annotation可以修饰任何程序元素，可以使用@Target来选择允许修饰的元素。</p>
+<p>一旦在Annotation中定义了成员变量，使用该Annotation时就应该为成员变量指定值，如Annotation</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">publc <span class="meta">@interface</span> MyTag&#123;</span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> &quot;www&quot;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">age</span><span class="params">()</span> <span class="keyword">default</span> 30</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在修饰元素时，就要指定成员变量值，否则取默认值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="meta">@MyTag(name = &quot;w2&quot;, age = 22)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">info</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以是否包含成员变量可以将Annotation分为两种：<strong>标记Annotation</strong>和<strong>元数据Annotation</strong>。</p>
+
       
     </div>
 
