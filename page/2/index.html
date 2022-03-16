@@ -20,32 +20,28 @@
     var CONFIG = {"hostname":"wangziqi20.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="学习Hexo的基本操作参照官网Hexo 安装环境：git和node 1npm install -g hexo-cli  将npm的安装路径加入到环境变量中以便于直接运行。 基本命令建站用hexo初始化路径，然后进入路径中用npm安装modules 123hexo init &lt;folder&gt;cd &lt;folder&gt;npm install  配置_config.yml 12345">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hexo learning">
-<meta property="og:url" content="https://wangziqi20.github.io/2022/01/02/hexo-learning/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="风若离">
+<meta property="og:url" content="https://wangziqi20.github.io/page/2/index.html">
 <meta property="og:site_name" content="风若离">
-<meta property="og:description" content="学习Hexo的基本操作参照官网Hexo 安装环境：git和node 1npm install -g hexo-cli  将npm的安装路径加入到环境变量中以便于直接运行。 基本命令建站用hexo初始化路径，然后进入路径中用npm安装modules 123hexo init &lt;folder&gt;cd &lt;folder&gt;npm install  配置_config.yml 12345">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-02T13:38:21.000Z">
-<meta property="article:modified_time" content="2022-01-02T14:02:04.587Z">
 <meta property="article:author" content="风若离">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://wangziqi20.github.io/2022/01/02/hexo-learning/">
+<link rel="canonical" href="https://wangziqi20.github.io/page/2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
-    isPost : true,
+    isHome : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>hexo learning | 风若离</title>
+  <title>风若离</title>
   
 
 
@@ -143,10 +139,9 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content index posts-expand">
             
-
-    
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -162,9 +157,10 @@
       <meta itemprop="name" content="风若离">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          hexo learning
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/02/hexo-learning/" class="post-title-link" itemprop="url">hexo learning</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -188,7 +184,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="学习Hexo的基本操作"><a href="#学习Hexo的基本操作" class="headerlink" title="学习Hexo的基本操作"></a>学习Hexo的基本操作</h1><p>参照官网<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a></p>
+          <h1 id="学习Hexo的基本操作"><a href="#学习Hexo的基本操作" class="headerlink" title="学习Hexo的基本操作"></a>学习Hexo的基本操作</h1><p>参照官网<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a></p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>环境：git和node</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
@@ -221,34 +217,90 @@
 
 <p>这种模式下，新建的文章不会在主页模式，而会到新的url和路径中。比如新建一个test page，首先source文件夹下会出现名为test的文件夹，文件夹下还会有一个index.md文件。这时候generate和deploy或者server以后查看，首先在主页中是无法查看的，比如本地启动localhost:4000，看不到这个page，如果url改为localhost:4000/test，就能看到这个page的页面了。</p>
 
+      
     </div>
 
     
     
     
-
       <footer class="post-footer">
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/01/01/FirstAttempt/" rel="prev" title="FirstAttempt">
-      <i class="fa fa-chevron-left"></i> FirstAttempt
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/01/03/kubernetes1.22.0%E9%83%A8%E7%BD%B2/" rel="next" title="Kubernetes1.22.0部署">
-      Kubernetes1.22.0部署 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
+        <div class="post-eof"></div>
       </footer>
-    
   </article>
   
   
   
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wangziqi20.github.io/2022/01/01/FirstAttempt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="风若离">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风若离">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/01/FirstAttempt/" class="post-title-link" itemprop="url">FirstAttempt</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-01 22:41:32 / 修改时间：22:42:23" itemprop="dateCreated datePublished" datetime="2022-01-01T22:41:32+08:00">2022-01-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="挥别2021"><a href="#挥别2021" class="headerlink" title="挥别2021"></a>挥别2021</h1><h2 id="写在最开始"><a href="#写在最开始" class="headerlink" title="写在最开始"></a>写在最开始</h2><p>2021年是个不平凡的一年，我从校园真正地步入了社会，到现在工作半年时间，从一个物理专业的学生，只有一点linux操作经验和一点c++编程经验，基本上零基础跳到现在的java开发岗位，心里想说的真是有很多。</p>
+<p>建立这个blog，一方面是给自己留下一些技术总结，等回首时能看到自己的积累，另一方面也是对自己的敦促吧，催促自己上进，努力去学习、接触更多的东西。</p>
+<h2 id="下一步学什么？"><a href="#下一步学什么？" class="headerlink" title="下一步学什么？"></a>下一步学什么？</h2><p>1、Java开发基础知识加固，SpringCloud框架学习</p>
+<p>2、架构知识学习</p>
+<p>3、Kubernetes容器化部署和自动化部署流水线</p>
+<p>4、前端vue基础、小程序基础</p>
+<p>5、python爬虫、AI相关蹭个热度</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 
 
@@ -300,7 +352,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0Hexo%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">学习Hexo的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%99"><span class="nav-number">1.2.1.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.2.</span> <span class="nav-text">使用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF"><span class="nav-number">1.2.3.</span> <span class="nav-text">使用模板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layout%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.3.</span> <span class="nav-text">layout进一步学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#post"><span class="nav-number">1.3.1.</span> <span class="nav-text">post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#draft"><span class="nav-number">1.3.2.</span> <span class="nav-text">draft</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#page"><span class="nav-number">1.3.3.</span> <span class="nav-text">page</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
