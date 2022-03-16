@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-03-16 13:42:23 / 修改时间：13:58:52" itemprop="dateCreated datePublished" datetime="2022-03-16T13:42:23+08:00">2022-03-16</time>
+              <time title="创建时间：2022-03-16 13:42:23 / 修改时间：14:21:20" itemprop="dateCreated datePublished" datetime="2022-03-16T13:42:23+08:00">2022-03-16</time>
             </span>
 
           
@@ -184,7 +184,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Java几个常见注解-Target-Retention-Documented-Component"><a href="#Java几个常见注解-Target-Retention-Documented-Component" class="headerlink" title="Java几个常见注解@Target@Retention@Documented@Component"></a>Java几个常见注解@Target@Retention@Documented@Component</h1><p>这里有一个例子，一个鉴权注解的定义。在这里，用到了@Target、@Retention和@Doucumented</p>
+          <h1 id="Java几个常见注解"><a href="#Java几个常见注解" class="headerlink" title="Java几个常见注解"></a>Java几个常见注解</h1><h1 id="Target-Retention-Documented-Component"><a href="#Target-Retention-Documented-Component" class="headerlink" title="@Target@Retention@Documented@Component"></a>@Target@Retention@Documented@Component</h1><p>这里有一个例子，一个鉴权注解的定义。在这里，用到了@Target、@Retention和@Doucumented</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123; ElementType.METHOD, ElementType.TYPE &#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Inner &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 是否AOP统一处理</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> false, true</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">boolean</span> <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> <span class="keyword">true</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 需要特殊判空的字段(预留)</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span> &#123;&#125;</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	String[] field() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Target"><a href="#Target" class="headerlink" title="@Target"></a>@Target</h2><p>@Target用来表示注解作用范围，超过这个作用范围，编译的时候就会报错。</p>
@@ -387,6 +387,89 @@
           <h1 id="SpringCloud中redis的使用方法"><a href="#SpringCloud中redis的使用方法" class="headerlink" title="SpringCloud中redis的使用方法"></a>SpringCloud中redis的使用方法</h1><p><img src="https://images2018.cnblogs.com/blog/1464284/201808/1464284-20180816153027873-303678673.png" alt="img"></p>
 <h2 id="pom依赖"><a href="#pom依赖" class="headerlink" title="pom依赖"></a>pom依赖</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wangziqi20.github.io/2022/02/20/mysql&redis%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="风若离">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风若离">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/20/mysql&redis%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">mysql&redis安装</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-20 18:31:17" itemprop="dateCreated datePublished" datetime="2022-02-20T18:31:17+08:00">2022-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-16 14:42:00" itemprop="dateModified" datetime="2022-03-16T14:42:00+08:00">2022-03-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="mysql-amp-redis安装"><a href="#mysql-amp-redis安装" class="headerlink" title="mysql&amp;redis安装"></a>mysql&amp;redis安装</h1><p>前些日子在家里组了一台台式，需要安装一下开发环境，mysql的安装记忆里还有点麻烦，记录一下</p>
+<h2 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h2><p>下载地址，官网太慢了，找了阿里的，下的zip版本</p>
+<p><a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/mysql/MySQL-8.0/">阿里云开源镜像站资源目录 (aliyun.com)</a></p>
+<p>解压缩以后，常规操作，把bin文件夹加到环境变量中。</p>
+<p><img src="/2022/02/20/mysql&redis%E5%AE%89%E8%A3%85/image-20220220181220692.png" alt="image-20220220181220692"></p>
+<p>然后进到mysql文件夹下边，新建一个data文件夹放数据，开始配置初始化文件，别的都取默认值，不管了<br><img src="/2022/02/20/mysql&redis%E5%AE%89%E8%A3%85/image-20220220184444301.png" alt="image-20220220184444301"></p>
+<p>进入到bin路径下，在cmd中运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysqld -remove</span><br><span class="line">mysqld -install</span><br><span class="line">mysqld --initialize-insecure --user=root</span><br></pre></td></tr></table></figure>
+
+<p>记住要在bin路径下。</p>
+<p>然后就可以启动服务了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+
+<p>安装就完成啦，用Navicat连上测试一下，这样是没有密码的，上去设个密码，完事~</p>
+<h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><p>redis就简单太多了，先下载下来redis包，<a target="_blank" rel="noopener" href="https://redis.io/download">Redis</a></p>
+<p>如果不配置其它的，比如requirepass，直接运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf --loglevel verbose  </span><br></pre></td></tr></table></figure>
+
+<p>服务就加入到windows服务中了，默认6379端口</p>
 
       
     </div>
@@ -899,132 +982,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wangziqi20.github.io/2022/01/03/kubernetes1.22.0%E9%83%A8%E7%BD%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="风若离">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="风若离">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/03/kubernetes1.22.0%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">Kubernetes1.22.0部署</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-03 23:38:21" itemprop="dateCreated datePublished" datetime="2022-01-03T23:38:21+08:00">2022-01-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-04 00:00:20" itemprop="dateModified" datetime="2022-01-04T00:00:20+08:00">2022-01-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Kubernetes1-22-0部署"><a href="#Kubernetes1-22-0部署" class="headerlink" title="Kubernetes1.22.0部署"></a>Kubernetes1.22.0部署</h1><p>文档时间：2021.8.20，这是一篇历史文档</p>
-<p>ATTENTION：按照文档部署因为时间不同和网络不同可能会导致某些资源失效或网络不通，部署文档最好持续更新。</p>
-<h2 id="一、测试预备准备"><a href="#一、测试预备准备" class="headerlink" title="一、测试预备准备"></a>一、测试预备准备</h2><p>VirtualBox建立的两台虚拟机，每台虚拟机2核，4G内存，8G硬盘空间（动态）。安装centos7.5系统。</p>
-<h2 id="二、配置环境"><a href="#二、配置环境" class="headerlink" title="二、配置环境"></a>二、配置环境</h2><p>虚拟机HostOnly子网ip为192.168.18.0/24，准备master的ip为192.168.18.100，node01的ip为192.168.18.101。</p>
-<p>NAT网络为192.168.80.0/24，DHCP分配地址。</p>
-<p>主机名解析，两台机器上均在/etc/hosts中添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">192.168.18.100 master</span><br><span class="line">192.168.18.101 node01</span><br></pre></td></tr></table></figure>
-
-<p>同步时间</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl start chronyd</span><br><span class="line">systemctl <span class="built_in">enable</span> chronyd</span><br><span class="line">date</span><br></pre></td></tr></table></figure>
-
-<p>禁用iptables和firewalld服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br><span class="line">systemctl stop iptables</span><br><span class="line">system <span class="built_in">disable</span> iptables</span><br></pre></td></tr></table></figure>
-
-<p>禁用selinux</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/selinux/config</span><br><span class="line">修改enforcing为disabled</span><br></pre></td></tr></table></figure>
-
-<p>禁用swap分区</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fstab</span><br><span class="line">注释掉swap那一行</span><br></pre></td></tr></table></figure>
-
-<p>修改linux内核参数，添加网桥过滤和地址转发功能，编辑/etc/sysctl.d/kubernetes.conf</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">net.bridge.bridge-nf-call-ip6tables = 1</span><br><span class="line">net.bridge.bridge-nf-call-iptables = 1</span><br><span class="line">net.ipv4.ip_forward = 1</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br><span class="line"><span class="comment">#重新加载配置</span></span><br><span class="line">modprobe br_netfilter</span><br><span class="line"><span class="comment">#加载网桥过滤模块</span></span><br><span class="line">lsmod | grep br_netfilter</span><br><span class="line"><span class="comment">#查看网桥过滤模块是否加载成功</span></span><br></pre></td></tr></table></figure>
-
-<p>配置ipvs功能</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">yum install ispect ipvsadmin -y</span><br><span class="line"><span class="comment">#安装ipset和ipvsadm</span></span><br><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/sysconfig/modules/ipvs.modules</span></span><br><span class="line"><span class="string">#!/bin/bash</span></span><br><span class="line"><span class="string">modprobe -- ip_vs</span></span><br><span class="line"><span class="string">modprobe -- ip_vs_rr</span></span><br><span class="line"><span class="string">modprobe -- ip_vs_wrr</span></span><br><span class="line"><span class="string">modprobe -- ip_vs_sh</span></span><br><span class="line"><span class="string">modprobe -- nf_conntrack_ipv4</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment">#添加需要加载的模块写入脚本文件</span></span><br><span class="line">chmod +x /etc/sysconfig/modules/ipvs.modules</span><br><span class="line">/bin/bash /etc/sysconfig/modules/ipvs.modules</span><br><span class="line"><span class="comment">#加执行权限和运行</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot<span class="comment">#重启</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="三、正式安装"><a href="#三、正式安装" class="headerlink" title="三、正式安装"></a>三、正式安装</h2><h3 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h3><p>完成docker最新版本的安装，阿里云换源与cgroup的配置。</p>
-<p>其中registry-mirrors建议去阿里云更新获得新地址。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo</span><br><span class="line"></span><br><span class="line">yum install docker-ce -y</span><br><span class="line"><span class="comment">#安装最新版本</span></span><br><span class="line"></span><br><span class="line">mkdir /etc/docker</span><br><span class="line">cat &lt;&lt;<span class="string">EOF &gt; /etc/docker/daemon.json</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">  &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;],	</span></span><br><span class="line"><span class="string">  &quot;registry-mirrors&quot;: [&quot;https://8fj053nl.mirror.aliyuncs.com&quot;]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line">systemctl <span class="built_in">enable</span> docker &amp;&amp; systemctl start docker</span><br></pre></td></tr></table></figure>
-
-<h3 id="集群初始化"><a href="#集群初始化" class="headerlink" title="集群初始化"></a>集群初始化</h3><p>将kubernetes镜像源从国外改为国内镜像源</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.repos.d/kubernetes.repo</span><br><span class="line">[kubernetes]</span><br><span class="line">name=Kubernetes</span><br><span class="line">baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=0</span><br><span class="line">repo_gpgcheck=0</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg</span><br><span class="line">http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span><br></pre></td></tr></table></figure>
-
-<p>安装kubeadm、kubelet和kubectl，版本都统一为1.22.0（截至当前最新版本为1.22.0）注意docker版本是否满足要求</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y kubelet-1.22.0 kubeadm-1.22.0 kubectl-1.22.0</span><br><span class="line">systemctl start kubelet &amp;&amp; systemctl <span class="built_in">enable</span> kubelet</span><br></pre></td></tr></table></figure>
-
-<p>配置kubelet的cgroup，编辑/etc/sysconfig/kubelet</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KUBELET_CGROUP_ARGS=<span class="string">&quot;--cgroup-driver=systemd&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong><font color=red>只在master服务器上执行：</font></strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">kubeadm init \</span><br><span class="line">--apiserver-advertise-address=192.168.18.100 \</span><br><span class="line">--image-repository registry.aliyuncs.com/google_containers \</span><br><span class="line">--kubernetes-version=v1.22.0 \</span><br><span class="line">--pod-network-cidr=10.244.0.0/16 \</span><br><span class="line">--service-cidr=10.96.0.0/16 </span><br><span class="line"><span class="comment">#配置</span></span><br><span class="line"><span class="comment">#第一行为master地址，第二行为镜像仓库，原仓库k8s.io无法连接，换阿里云，第三行为版本号，第四行为pod网段，第五行为服务网段。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#从这一步获取token和证书hash命令</span></span><br><span class="line"><span class="comment">#例如我的</span></span><br><span class="line">kubeadm join 192.168.18.100:6443 --token 1jnxb0.a5swvqiuxxagn54j \</span><br><span class="line">        --discovery-token-ca-cert-hash sha256:2cfa860c659116c34dd74f99d7968c57af7fe8203439578adecaed9310555bcf</span><br><span class="line"><span class="comment">#将此命令在node里执行，就可以将node加入集群。</span></span><br><span class="line"><span class="comment">#kubeadm join &lt;master ip&gt; --token &lt;token&gt; --discovery-token-ca-cert-hash sha256:&lt;证书hash&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#执行下面的命令使所有类型的用户都可以执行kubectl命令。</span></span><br><span class="line">mkdir -p <span class="variable">$HOME</span>/.kube</span><br><span class="line">sudo cp -i /etc/kubernetes/admin.conf <span class="variable">$HOME</span>/.kube/config</span><br><span class="line">sudo chown $(id -u):$(id -g) <span class="variable">$HOME</span>/.kube/config</span><br></pre></td></tr></table></figure>
-
-<p>加入node以后，kubectl get nodes</p>
-<p>可以查询节点情况，发现nodes都是notready状态，需要配置网络插件。</p>
-<p>安装网络插件，支持flannel、calico、canal等等，这里选择使用flannel。下载flanneld-v0.13.0-amd64.docker。<a href="https://link.zhihu.com/?target=https://github.com/flannel-io/flannel/releases/">下载地址</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker load &lt; flanneld-v0.13.0-amd64.docker</span><br><span class="line"></span><br><span class="line">获取配置文件，启动和查看状态</span><br><span class="line">wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</span><br><span class="line">kubectl apply -f kube-flannel.yml</span><br><span class="line">kubectl get nodes</span><br></pre></td></tr></table></figure>
-
-<p>会发现所有节点都变成了ready状态，这个要稍微等一等。完成ready以后，kubernetes的部署即完成。</p>
-<h2 id="四、2021-8-20这几天遇到的坑"><a href="#四、2021-8-20这几天遇到的坑" class="headerlink" title="四、2021.8.20这几天遇到的坑"></a>四、2021.8.20这几天遇到的坑</h2><p>在建立好kubernetes平台以后，请务必验证kube-dns的功能，以及不同节点之间的通信是否正常，以免部署很多东西以后平台网络问题很难处理。我这几天就碰到了这个问题，我的节点之间通信有问题，jenkins部署以后无法连接kube-dns，无法完成解析功能。</p>
-<p>方法：</p>
-<p>建立一个任意pod，比如我建了一个centos的pod：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Pod</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">centos-master</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">tolerations:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">node-role.kubernetes.io/master</span></span><br><span class="line">      <span class="attr">operator:</span> <span class="string">Exists</span></span><br><span class="line">      <span class="attr">effect:</span> <span class="string">NoSchedule</span></span><br><span class="line">  <span class="attr">nodeSelector:</span></span><br><span class="line">    <span class="attr">node-role.kubernetes.io/master:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">centos</span></span><br><span class="line">      <span class="attr">image:</span> <span class="string">registry.cn-hangzhou.aliyuncs.com/dragon8512/centos7jdk8ssh:v1</span></span><br><span class="line">      <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">22</span></span><br><span class="line">          <span class="attr">hostPort:</span> <span class="number">50022</span></span><br><span class="line">          <span class="attr">protocol:</span> <span class="string">TCP</span></span><br></pre></td></tr></table></figure>
-
-<p>这个pod指定运行在master节点上。</p>
-<p>同样地，在其它各个节点上也运行一个centos pod，注意nodeSelector修改。</p>
-<p>然后观察各个pod之间是否能ping通，如果能ping通，则表明flannel网络没问题，如果不行，就需要重新研究一下网络配置了。</p>
-<h2 id="五、卸载Kubernetes"><a href="#五、卸载Kubernetes" class="headerlink" title="五、卸载Kubernetes"></a>五、卸载Kubernetes</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">kubeadm reset -f</span><br><span class="line">modprobe -r ipip</span><br><span class="line">lsmod</span><br><span class="line">rm -rf ~/.kube/</span><br><span class="line">rm -rf /etc/kubernetes/</span><br><span class="line">rm -rf /etc/systemd/system/kubelet.service.d</span><br><span class="line">rm -rf /etc/systemd/system/kubelet.service</span><br><span class="line">rm -rf /usr/bin/kube*</span><br><span class="line">rm -rf /etc/cni</span><br><span class="line">rm -rf /opt/cni</span><br><span class="line">rm -rf /var/lib/etcd</span><br><span class="line">rm -rf /var/etcd</span><br><span class="line">yum clean all</span><br><span class="line">yum remove kubeadm kubelet kubectl -y</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1094,7 +1051,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
