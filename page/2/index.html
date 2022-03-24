@@ -145,6 +145,82 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wangziqi20.github.io/2022/01/04/%E6%9C%AC%E5%9C%B0%E4%BA%8B%E5%8A%A1%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="风若离">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风若离">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/04/%E6%9C%AC%E5%9C%B0%E4%BA%8B%E5%8A%A1%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" class="post-title-link" itemprop="url">本地事务和分布式事务</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-04 22:39:16 / 修改时间：23:08:13" itemprop="dateCreated datePublished" datetime="2022-01-04T22:39:16+08:00">2022-01-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="本地事务"><a href="#本地事务" class="headerlink" title="本地事务"></a>本地事务</h1><p>今天工作时涉及到了事务这个概念，以前没有真正接触过，趁这个机会学习一下事务这个概念，并且联系一下经常听到的分布式事务，读一下资料，记一下学到的知识点。这一篇先大体抄一点本地事务的基本知识点。</p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>事务是数据库操作的最小工作单元，是作为单个逻辑工作单元执行的一系列操作；这些操作作为一个整体一起向系统提交，要么都执行、要么都不执行；事务是一组不可再分割的操作集合（工作逻辑单元）；</p>
+<p>PS：抄概念，手打一遍，哈哈，希望能记住点。</p>
+<h3 id="事务的特性"><a href="#事务的特性" class="headerlink" title="事务的特性"></a>事务的特性</h3><p><strong>原子性（atomicity）</strong>：不可分割，事务中的操作要么都做，要么都不做。</p>
+<p><strong>一致性（consistency）</strong>：事务必须是使数据库从一个一致性状态变到另一个一致性状态，事务的中间状态不能被观察到。</p>
+<p><strong>隔离性（isolation）</strong>：一个事务不能被其他事务干扰，事务内部的操作及使用数据对并发的其它事务是隔离的。隔离性分为四个级别：读未提交（read uncommitted）、读已提交（read committed）、可重复读（repeatable read）、串行化（serializable）。</p>
+<p><strong>持久性（durability）</strong>：事务一旦提交，它对数据库中数据的改变就应该是永久性的。</p>
+<h2 id="JAVA几种类型的事务"><a href="#JAVA几种类型的事务" class="headerlink" title="JAVA几种类型的事务"></a>JAVA几种类型的事务</h2><p>JAVA事务类型有三种：JDBC事务、JTA事务、容器事务。</p>
+<h3 id="JDBC事务"><a href="#JDBC事务" class="headerlink" title="JDBC事务"></a>JDBC事务</h3><p>在JDBC中处理事务，都是通过Connection完成的。同一事务中所有的操作，都在使用同一个Connection对象。JDBC事务默认是开启的，并且是默认提交。</p>
+<p>传统JDBC操作流程：</p>
+<p>1).获取JDBC连接 2).声明SQL 3).预编译SQL 4).执行SQL 5).处理结果集 6).释放结果集 7).释放Statement 8).提交事务 9).处理异常并回滚事务 10).释放JDBC连接</p>
+<p><strong>JDBC优缺点：</strong>1.冗长、重复 2.显示事务控制 3.每个步骤不可获取 4.显示处理受检查异常</p>
+<p>JDBC为使用Java进行数据库的事务操作提供了最基本的支持。通过JDBC事务，我们可以将多个SQL语句放到同一个事务中，保证其ACID特性。JDBC事务的主要优点就是API比较简单，可以实现最基本的事务操作，性能也相对较好。但是，JDBC事务有一个局限：一个 JDBC 事务不能跨越多个数据库！所以，如果涉及到多数据库的操作或者分布式场景，JDBC事务就无能为力了。</p>
+<h3 id="JTA事务"><a href="#JTA事务" class="headerlink" title="JTA事务"></a>JTA事务</h3><p>JTA(Java Transaction API)提供了跨数据库连接（或其他JTA资源）的事务管理能力。JTA事务管理则由JTA容器实现，J2ee框架中事务管理器与应用程序，资源管理器，以及应用服务器之间的事务通讯。</p>
+<p><strong>JTA的优缺点：</strong></p>
+<p>JTA的优点很明显，就是提供了分布式事务的解决方案，严格的ACID。但是，标准的JTA方式的事务管理在日常开发中并不常用。</p>
+<p>JTA的缺点是实现复杂，通常情况下，JTA UserTransaction需要从JNDI获取。这意味着，如果我们使用JTA，就需要同时使用JTA和JNDI。</p>
+<h3 id="Spring容器事务"><a href="#Spring容器事务" class="headerlink" title="Spring容器事务"></a>Spring容器事务</h3><p>下一篇需要专门拿出Spring的事务实现来好好看一看。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://wangziqi20.github.io/2022/01/03/kubernetes1.22.0%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -491,7 +567,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

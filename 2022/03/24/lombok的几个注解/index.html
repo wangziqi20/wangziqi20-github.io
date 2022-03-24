@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wangziqi20.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Lombok的几个注解一、Lombok引入IDEA开发中，Lombok需要两部分，一个是maven依赖，一个是IDEA插件 1、maven依赖12345&lt;dependency&gt;        &lt;groupId&gt;org.projectlombok&lt;&#x2F;groupId&gt;        &lt;artifactId&gt;lombok&lt;&#x2F;artifactId&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lombok的几个注解">
+<meta property="og:url" content="https://wangziqi20.github.io/2022/03/24/lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3/index.html">
+<meta property="og:site_name" content="风若离">
+<meta property="og:description" content="Lombok的几个注解一、Lombok引入IDEA开发中，Lombok需要两部分，一个是maven依赖，一个是IDEA插件 1、maven依赖12345&lt;dependency&gt;        &lt;groupId&gt;org.projectlombok&lt;&#x2F;groupId&gt;        &lt;artifactId&gt;lombok&lt;&#x2F;artifactId&amp;gt">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wangziqi20.github.io/lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3/image-20220324164009878.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/i-beta/1003856/202003/1003856-20200309123505093-120706027.png">
+<meta property="article:published_time" content="2022-03-24T08:30:00.000Z">
+<meta property="article:modified_time" content="2022-03-24T10:15:54.070Z">
+<meta property="article:author" content="风若离">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wangziqi20.github.io/lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3/image-20220324164009878.png">
+
+<link rel="canonical" href="https://wangziqi20.github.io/2022/03/24/lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Lombok的几个注解 | 风若离</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">风若离</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wangziqi20.github.io/2022/03/24/lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="风若离">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风若离">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Lombok的几个注解
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-03-24 16:30:00 / 修改时间：18:15:54" itemprop="dateCreated datePublished" datetime="2022-03-24T16:30:00+08:00">2022-03-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Lombok的几个注解"><a href="#Lombok的几个注解" class="headerlink" title="Lombok的几个注解"></a>Lombok的几个注解</h1><h2 id="一、Lombok引入"><a href="#一、Lombok引入" class="headerlink" title="一、Lombok引入"></a>一、Lombok引入</h2><p>IDEA开发中，Lombok需要两部分，一个是maven依赖，一个是IDEA插件</p>
+<h3 id="1、maven依赖"><a href="#1、maven依赖" class="headerlink" title="1、maven依赖"></a>1、maven依赖</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">        &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、IDEA插件"><a href="#2、IDEA插件" class="headerlink" title="2、IDEA插件"></a>2、IDEA插件</h3><p><img src="/lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3/image-20220324164009878.png" alt="image-20220324164009878"></p>
+<h2 id="二、Lombok注解"><a href="#二、Lombok注解" class="headerlink" title="二、Lombok注解"></a>二、Lombok注解</h2><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ooo0/p/12448096.html">Lombok常用注解 - 草木物语 - 博客园 (cnblogs.com)</a></p>
+<p><img src="https://img2020.cnblogs.com/i-beta/1003856/202003/1003856-20200309123505093-120706027.png" alt="img"></p>
+<h3 id="1、-Getter-Setter"><a href="#1、-Getter-Setter" class="headerlink" title="1、@Getter/@Setter"></a>1、@Getter/@Setter</h3><p>自动生成get和set方法</p>
+<h3 id="2、-ToString"><a href="#2、-ToString" class="headerlink" title="2、@ToString"></a>2、@ToString</h3><p>重写toString()方法，打印出所有变量</p>
+<h3 id="3、-EqualsAndHashCode"><a href="#3、-EqualsAndHashCode" class="headerlink" title="3、@EqualsAndHashCode"></a>3、@EqualsAndHashCode</h3><p>自动生成equals(Object obj)方法和hashCode()方法，包括所有非静态变量和非 transient 的变量。</p>
+<p>排除某变量：@EqualsAndHashCode(exclude = “xxx”)</p>
+<h3 id="4、-NoArgsConstructor-AllArgsConstructor-RequiredArgsConstructor"><a href="#4、-NoArgsConstructor-AllArgsConstructor-RequiredArgsConstructor" class="headerlink" title="4、@NoArgsConstructor, @AllArgsConstructor, @RequiredArgsConstructor"></a>4、@NoArgsConstructor, @AllArgsConstructor, @RequiredArgsConstructor</h3><p>构造器三兄弟，区别在于生成构造器的参数不同。</p>
+<p>@NoArgsConstructor：生成无参构造器</p>
+<p>@AllArgsConstructor：生成包含所有参数的构造器</p>
+<p>@RequiredArgsConstructor：生成一个包含 “特定参数” 的构造器，特定参数指的是那些有加上 final 修饰词、还有@NonNull修饰的变量们，如果没有这种变量的话，就会生成一个无参构造。</p>
+<p><font color='red'><strong>ATTENTION</strong></font>：如果没有显示写出构造器，编译器会自动帮我们写一个无参构造器，如果有构造器了，编译器就不会给我们生成了。如果用@AllArgsConstructor去修饰类，会生成一个全参构造器，这时候无参构造器就没了。因此用@AllArgsConstructor，一定要补一个@NoArgsConstructor。</p>
+<h3 id="5、-Data"><a href="#5、-Data" class="headerlink" title="5、@Data"></a>5、@Data</h3><p>这位是重量级，大杂烩，包含了@Getter、@Setter、@ToString、@EqualsAndHashCode、@RequiredArgsConstructor。</p>
+<p>@Data 是使用频率最高的 lombok 注解，通常 @Data 会加在一个值可以被更新的对象上，像是日常使用的 DTO 们、或是与数据库交互的 Entity 们，就很适合加上 @Data 注解，也就是 @Data for mutable class</p>
+<h3 id="6、-Value"><a href="#6、-Value" class="headerlink" title="6、@Value"></a>6、@Value</h3><p>也是整合包，但是他会把所有的变量都设成 final 的，其他的就跟 @Data 一样，等于同时加了以下注解：@Getter (注意没有setter)、@ToString、@EqualsAndHashCode、@RequiredArgsConstructor。</p>
+<p>适合加在值不希望被改变的类上，像是某个类的值当创建后就不希望被更改，只希望我们读它而已，就适合加上 @Value 注解，也就是 @Value for immutable class。</p>
+<p><font color='red'><strong>ATTENTION</strong></font>：lombok 的注解 @Value 和另一个 Spring 的注解 @Value 撞名，在 import 时不要 import 错了</p>
+<h3 id="7、-Builder"><a href="#7、-Builder" class="headerlink" title="7、@Builder"></a>7、@Builder</h3><p>自动生成流式 set 值写法。这个还没怎么用过。</p>
+<p>加上这个注解以后，可以使用流式，如：Person.builder().setName(“xxx”).setAge(“19”).build()。</p>
+<p>还有另外的一种注解@Accessors，可以用chain = true或fluent = true。</p>
+<p>chain = true，生成setter返回this。fluent = true，生成的方法不带get前缀（不推荐），容易寄。</p>
+<p>这样可以这样用：Person.setName(“xxx”).setAge(“19”)；</p>
+<h3 id="8、-Slf4j"><a href="#8、-Slf4j" class="headerlink" title="8、@Slf4j"></a>8、@Slf4j</h3><p>自动生成该类的 log 静态常量，要打日志就可以直接打，不用再手动 new log 静态常量了</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/03/16/Java%E5%87%A0%E4%B8%AA%E5%B8%B8%E8%A7%81%E6%B3%A8%E8%A7%A3@Target@Retention@Documented@Component%20-%20%E5%89%AF%E6%9C%AC/" rel="prev" title="Java几个常见注解@Target@Retention@Documented@Component">
+      <i class="fa fa-chevron-left"></i> Java几个常见注解@Target@Retention@Documented@Component
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">Lombok的几个注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81Lombok%E5%BC%95%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">一、Lombok引入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81maven%E4%BE%9D%E8%B5%96"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、maven依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81IDEA%E6%8F%92%E4%BB%B6"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、IDEA插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Lombok%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.2.</span> <span class="nav-text">二、Lombok注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81-Getter-Setter"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、@Getter&#x2F;@Setter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81-ToString"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、@ToString</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81-EqualsAndHashCode"><span class="nav-number">1.2.3.</span> <span class="nav-text">3、@EqualsAndHashCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81-NoArgsConstructor-AllArgsConstructor-RequiredArgsConstructor"><span class="nav-number">1.2.4.</span> <span class="nav-text">4、@NoArgsConstructor, @AllArgsConstructor, @RequiredArgsConstructor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81-Data"><span class="nav-number">1.2.5.</span> <span class="nav-text">5、@Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81-Value"><span class="nav-number">1.2.6.</span> <span class="nav-text">6、@Value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%E3%80%81-Builder"><span class="nav-number">1.2.7.</span> <span class="nav-text">7、@Builder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%E3%80%81-Slf4j"><span class="nav-number">1.2.8.</span> <span class="nav-text">8、@Slf4j</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">风若离</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">风若离</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
