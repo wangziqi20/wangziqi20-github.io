@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-25 14:42:19" itemprop="dateModified" datetime="2022-03-25T14:42:19+08:00">2022-03-25</time>
+                <time title="修改时间：2022-03-25 15:02:33" itemprop="dateModified" datetime="2022-03-25T15:02:33+08:00">2022-03-25</time>
               </span>
 
           
@@ -193,9 +193,9 @@
           <h1 id="Lombok的几个注解"><a href="#Lombok的几个注解" class="headerlink" title="Lombok的几个注解"></a>Lombok的几个注解</h1><h2 id="一、Lombok引入"><a href="#一、Lombok引入" class="headerlink" title="一、Lombok引入"></a>一、Lombok引入</h2><p>IDEA开发中，Lombok需要两部分，一个是maven依赖，一个是IDEA插件</p>
 <h3 id="1、maven依赖"><a href="#1、maven依赖" class="headerlink" title="1、maven依赖"></a>1、maven依赖</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">        &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="2、IDEA插件"><a href="#2、IDEA插件" class="headerlink" title="2、IDEA插件"></a>2、IDEA插件</h3><p><img src="/.io//03/24/lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3/image-20220324164009878.png" alt="image-20220324164009878"></p>
+<h3 id="2、IDEA插件"><a href="#2、IDEA插件" class="headerlink" title="2、IDEA插件"></a>2、IDEA插件</h3><p><img src="/2022/03/24/lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3/image-20220324164009878.png" alt="image-20220324164009878"></p>
 <h2 id="二、Lombok注解"><a href="#二、Lombok注解" class="headerlink" title="二、Lombok注解"></a>二、Lombok注解</h2><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ooo0/p/12448096.html">Lombok常用注解 - 草木物语 - 博客园 (cnblogs.com)</a></p>
-<p><img src="https://img2020.cnblogs.com/i-beta/1003856/202003/1003856-20200309123505093-120706027.png" alt="img"></p>
+<p><img src="/2022/03/24/lombok%E7%9A%84%E5%87%A0%E4%B8%AA%E6%B3%A8%E8%A7%A3/1003856-20200309123505093-120706027.png" alt="alt"></p>
 <h3 id="1、-Getter-x2F-Setter"><a href="#1、-Getter-x2F-Setter" class="headerlink" title="1、@Getter&#x2F;@Setter"></a>1、@Getter&#x2F;@Setter</h3><p>自动生成get和set方法</p>
 <h3 id="2、-ToString"><a href="#2、-ToString" class="headerlink" title="2、@ToString"></a>2、@ToString</h3><p>重写toString()方法，打印出所有变量</p>
 <h3 id="3、-EqualsAndHashCode"><a href="#3、-EqualsAndHashCode" class="headerlink" title="3、@EqualsAndHashCode"></a>3、@EqualsAndHashCode</h3><p>自动生成equals(Object obj)方法和hashCode()方法，包括所有非静态变量和非 transient 的变量。</p>
@@ -584,8 +584,8 @@
 <h2 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h2><p>下载地址，官网太慢了，找了阿里的，下的zip版本</p>
 <p><a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/mysql/MySQL-8.0/">阿里云开源镜像站资源目录 (aliyun.com)</a></p>
 <p>解压缩以后，常规操作，把bin文件夹加到环境变量中。</p>
-<p><img src="/.io//02/20/mysql&redis%E5%AE%89%E8%A3%85/image-20220220181220692.png" alt="image-20220220181220692"></p>
-<p>然后进到mysql文件夹下边，新建一个data文件夹放数据，开始配置初始化文件，别的都取默认值，不管了<br><img src="/.io//02/20/mysql&redis%E5%AE%89%E8%A3%85/image-20220220184444301.png" alt="image-20220220184444301"></p>
+<p><img src="/2022/02/20/mysql&redis%E5%AE%89%E8%A3%85/image-20220220181220692.png" alt="image-20220220181220692"></p>
+<p>然后进到mysql文件夹下边，新建一个data文件夹放数据，开始配置初始化文件，别的都取默认值，不管了<br><img src="/2022/02/20/mysql&redis%E5%AE%89%E8%A3%85/image-20220220184444301.png" alt="image-20220220184444301"></p>
 <p>进入到bin路径下，在cmd中运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysqld -remove</span><br><span class="line">mysqld -install</span><br><span class="line">mysqld --initialize-insecure --user=root</span><br></pre></td></tr></table></figure>
 
